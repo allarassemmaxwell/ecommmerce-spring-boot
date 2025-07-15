@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="fragments/base" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dashboard | Smart Furniture Shop</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/menu/logo/logo.png}">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/font-awesome.css}">
+    <!-- Fontawesome Star -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/fontawesome-stars.css}">
+    <!-- Ion Icon -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/ion-fonts.css}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/slick.css}">
+    <!-- Animation -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/animate.css}">
+    <!-- jQuery Ui -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/jquery-ui.min.css}">
+    <!-- Lightgallery -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/lightgallery.min.css}">
+    <!-- Nice Select -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/nice-select.css}">
+
+    <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
+    <!--
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    -->
+
+    <!-- Main Style CSS (Please use minify version for better website load performance) -->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div th:replace="fragments/header :: header"></div>
+
+    <div layout:fragment="content">
+
+        <!-- Begin Uren's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <h2>My Account</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">My Account</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Uren's Breadcrumb Area End Here -->
+        <!-- Begin Uren's Page Content Area -->
+        <main class="page-content">
+            <!-- Begin Uren's Account Page Area -->
+            <div class="account-page-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div th:replace="fragments/sidebar :: sidebar"></div>
+
+                        <div class="col-lg-9">
+                            <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
+                                <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
+                                    <div class="myaccount-dashboard">
+                                        <p>Hello <b>Edwin Adams</b> (not Edwin Adams? <a href="login-register.html">Sign
+                                            out</a>)</p>
+                                        <p>From your account dashboard you can view your recent orders, manage your shipping and
+                                            billing addresses and <a href="javascript:void(0)">edit your password and account details</a>.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
+                                    <div class="myaccount-orders">
+                                        <h4 class="small-title">MY ORDERS</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover">
+                                                <tbody>
+                                                <tr>
+                                                    <th>ORDER</th>
+                                                    <th>DATE</th>
+                                                    <th>STATUS</th>
+                                                    <th>TOTAL</th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
+                                                    <td>Mar 27, 2019</td>
+                                                    <td>On Hold</td>
+                                                    <td>£162.00 for 2 items</td>
+                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
+                                                    <td>Mar 27, 2019</td>
+                                                    <td>On Hold</td>
+                                                    <td>£162.00 for 2 items</td>
+                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
+                                    <div class="myaccount-address">
+                                        <p>The following addresses will be used on the checkout page by default.</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="small-title">BILLING ADDRESS</h4>
+                                                <address>
+                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
+                                                </address>
+                                            </div>
+                                            <div class="col">
+                                                <h4 class="small-title">SHIPPING ADDRESS</h4>
+                                                <address>
+                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
+                                                </address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+                                    <div class="myaccount-details">
+                                        <form action="#" class="uren-form">
+                                            <div class="uren-form-inner">
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-firstname">First Name*</label>
+                                                    <input type="text" id="account-details-firstname">
+                                                </div>
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-lastname">Last Name*</label>
+                                                    <input type="text" id="account-details-lastname">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="account-details-email">Email*</label>
+                                                    <input type="email" id="account-details-email">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="account-details-oldpass">Current Password(leave blank to leave
+                                                        unchanged)</label>
+                                                    <input type="password" id="account-details-oldpass">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="account-details-newpass">New Password (leave blank to leave
+                                                        unchanged)</label>
+                                                    <input type="password" id="account-details-newpass">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="account-details-confpass">Confirm New Password</label>
+                                                    <input type="password" id="account-details-confpass">
+                                                </div>
+                                                <div class="single-input">
+                                                    <button class="uren-btn uren-btn_dark" type="submit"><span>SAVE
+                                                    CHANGES</span></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Uren's Account Page Area End Here -->
+        </main>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<!-- Modernizer JS -->
+<script th:src="@{/assets/js/vendor/modernizr-2.8.3.min.js}"></script>
+<!-- Popper JS -->
+<script th:src="@{/assets/js/vendor/popper.min.js}"></script>
+<!-- Bootstrap JS -->
+<script th:src="@{/assets/js/vendor/bootstrap.min.js}"></script>
+
+<!-- Slick Slider JS -->
+<script th:src="@{/assets/js/plugins/slick.min.js}"></script>
+<!-- Barrating JS -->
+<script th:src="@{/assets/js/plugins/jquery.barrating.min.js}"></script>
+<!-- Counterup JS -->
+<script th:src="@{/assets/js/plugins/jquery.counterup.js}"></script>
+<!-- Nice Select JS -->
+<script th:src="@{/assets/js/plugins/jquery.nice-select.js}"></script>
+<!-- Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/jquery.sticky-sidebar.js}"></script>
+<!-- Jquery-ui JS -->
+<script th:src="@{/assets/js/plugins/jquery-ui.min.js}"></script>
+<script th:src="@{/assets/js/plugins/jquery.ui.touch-punch.min.js}"></script>
+<!-- Lightgallery JS -->
+<script th:src="@{/assets/js/plugins/lightgallery.min.js}"></script>
+<!-- Scroll Top JS -->
+<script th:src="@{/assets/js/plugins/scroll-top.js}"></script>
+<!-- Theia Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/theia-sticky-sidebar.min.js}"></script>
+<!-- Waypoints JS -->
+<script th:src="@{/assets/js/plugins/waypoints.min.js}"></script>
+<!-- jQuery Zoom JS -->
+<script th:src="@{/assets/js/plugins/jquery.zoom.min.js}"></script>
+
+<!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
+<!--
+<script src="assets/js/vendor/vendor.min.js"></script>
+<script src="assets/js/plugins/plugins.min.js"></script>
+-->
+
+<!-- Main JS -->
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>
