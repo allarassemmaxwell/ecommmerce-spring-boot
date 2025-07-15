@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+nav {
+    margin: 1rem 0;
+}
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h3 {
+  border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+
+
+
+.profile {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background: white;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.about, .mission, .values {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #35424a;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+main {
+    padding: 20px;
+}
+
+.contact-info, .contact-form {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #35424a;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-item {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    height: 410px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    height: 60%;
+    transition: scale 1s ease-in-out;
+}
+.gallery-item img {
+  scale: 1.1;
+}
+
+
+/* Hero Section Styles */
+.hero {
+    height: 400px;
+    background: url('images/chichi.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    text-align: center;
+  }
+  
+  .hero-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Featured Products Section */
+  .featured-products {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .featured-products h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 410px;
+  }
+  
+  .product img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 60%;
+    transition: scale 1s ease-in-out;
+  }
+  
+  .product img:hover{
+    scale: 1.1;
+  }
+
+  .product h3 {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  .product p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .product a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .product a:hover {
+    color: #ff4500;
+  }
+  
