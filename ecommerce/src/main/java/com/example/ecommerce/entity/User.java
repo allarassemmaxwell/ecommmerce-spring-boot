@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
+@Table(name = "users") // renamed from "user" to avoid H2 conflict
 @Data // ✅ Generates getters, setters, toString, equals, hashCode
 @NoArgsConstructor // ✅ Default constructor
 public class User {
@@ -26,9 +27,6 @@ public class User {
     private String email;
 
     private String phoneNumber;
-
-    @ManyToOne
-    private City city;
 
     private String address;
 

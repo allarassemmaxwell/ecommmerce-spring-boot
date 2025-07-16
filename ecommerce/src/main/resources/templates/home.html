@@ -450,7 +450,8 @@
     </div>
     <!-- Uren's Product Area End Here -->
 
-    <div th:replace="fragments/footer :: footer"></div>
+<!--    <div th:replace="fragments/footer :: footer"></div>-->
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
 
@@ -498,6 +499,7 @@
 
 <!-- Main JS -->
 <script th:src="@{/assets/js/main.js}"></script>
+
 
 
 </body>
