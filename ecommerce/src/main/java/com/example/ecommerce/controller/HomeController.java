@@ -11,15 +11,4 @@ public class HomeController {
         model.addAttribute("title", "Home");
         return "home";
     }
-
-    @GetMapping("/contact")
-    public String contact(Model model) {
-        model.addAttribute("title", "Contact");
-        return "contact";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";  // this maps to login.html in /templates
-    }
 }

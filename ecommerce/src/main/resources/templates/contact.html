@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" layout:decorate="fragments/base" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -47,7 +48,7 @@
 <body>
 
 <div class="main-wrapper">
-    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="~{fragments/header :: header}"></div>
 
     <div layout:fragment="content">
 
@@ -57,7 +58,7 @@
                 <div class="breadcrumb-content">
                     <h2>Contact</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="@{/}">Home</a></li>
                         <li class="active">Contact</li>
                     </ul>
                 </div>
@@ -69,6 +70,7 @@
 
             <div class="container-fluid">
                 <div class="row">
+
                     <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                         <div class="contact-page-side-content">
                             <h3 class="contact-page-title">Contact Us</h3>
@@ -94,52 +96,72 @@
                     <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                         <div class="contact-form-content">
                             <h3 class="contact-page-title">Tell Us Your Message</h3>
+
                             <div class="contact-form">
-                                <form id="contact-form" action="http://hasthemes.com/file/mail.php" method="post">
+                                <form id="contact-form" th:action="@{/contact}" th:object="${contact}" method="post">
                                     <div class="row">
+                                        <!-- Success Message -->
+                                        <div class="col-md-12" th:if="${successMessage}">
+                                            <div class="alert alert-success" role="alert" th:text="${successMessage}"></div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>First Name <span class="required">*</span></label>
-                                                <input type="text" name="con_name" id="con_name" required>
+                                                <label for="firstName">First Name <span class="required">*</span></label>
+                                                <input type="text" id="firstName" th:field="*{firstName}" required />
+                                                <div class="text-danger" th:if="${#fields.hasErrors('firstName')}" style="color: red;">
+                                                    <p class="text-danger" th:errors="*{firstName}"></p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Last Name <span class="required">*</span></label>
-                                                <input type="text" name="con_name" id="con_name" required>
+                                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                                <input type="text" name="lastName" id="lastName" th:field="*{lastName}" required />
+                                                <div th:if="${#fields.hasErrors('lastName')}" style="color: red;">
+                                                    <p th:errors="*{lastName}"></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Your Email <span class="required">*</span></label>
-                                        <input type="email" name="con_email" id="con_email" required>
-                                    </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Phone Number <span class="required">*</span></label>
-                                                <input type="text" name="con_email" id="con_email" required>
+                                                <label for="email">Your Email <span class="required">*</span></label>
+                                                <input type="email" id="email" th:field="*{email}" required />
+                                                <div th:if="${#fields.hasErrors('email')}" style="color: red;">
+                                                    <p th:errors="*{email}"></p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Subject</label>
-                                                <input type="text" name="con_subject" id="con_subject">
+                                                <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                                                <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required />
+                                                <div th:if="${#fields.hasErrors('phoneNumber')}" style="color: red;">
+                                                    <p th:errors="*{phoneNumber}"></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group form-group-2">
-                                        <label>Your Message</label>
-                                        <textarea name="con_message" id="con_message"></textarea>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-group-2">
+                                                <label for="message">Your Message <span class="required">*</span></label>
+                                                <textarea id="message" th:field="*{message}" required></textarea>
+                                                <div th:if="${#fields.hasErrors('message')}" style="color: red;">
+                                                    <p th:errors="*{message}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" value="submit" id="submit" class="uren-contact-form_btn" name="submit">send</button>
+                                        <button type="submit" value="submit" class="uren-contact-form_btn" name="submit">send</button>
                                     </div>
                                 </form>
                             </div>
-                            <p class="form-messege"></p>
                         </div>
                     </div>
                 </div>
@@ -151,7 +173,7 @@
         <!-- Contact Main Page Area End Here -->
     </div>
 
-    <div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
 
