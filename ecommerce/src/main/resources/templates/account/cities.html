@@ -95,7 +95,7 @@
                                         <tr th:each="city : ${cities}">
                                             <td><a class="account-order-id" href="javascript:void(0)" th:text="${city.name}">Name</a></td>
                                             <td th:text="${#temporals.format(city.createdAt, 'MMM dd, yyyy')}">Date</td>
-                                            <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
+                                            <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>Delete</span></a>
                                             </td>
                                         </tr>
                                         </tbody>

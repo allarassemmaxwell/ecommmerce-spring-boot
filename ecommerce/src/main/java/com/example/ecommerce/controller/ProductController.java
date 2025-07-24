@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.ecommerce.repository.ProductRepository;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,6 +27,19 @@ public class ProductController {
     public String showProductPage(Model model) {
         model.addAttribute("products", productRepository.findAll());
         return "products";  // This will render templates/products.html
+    }
+
+    @GetMapping("/products/{id}")
+    public String showProductDetails(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
+        return productRepository.findById(id)
+                .map(product -> {
+                    model.addAttribute("product", product);
+                    return "product_details"; // templates/product_details.html
+                })
+                .orElseGet(() -> {
+                    redirectAttributes.addFlashAttribute("error", "Product not found.");
+                    return "redirect:/products";
+                });
     }
 
     @GetMapping("/dashboard/products")
@@ -59,5 +73,4 @@ public class ProductController {
         // Redirect to the products dashboard
         return "redirect:/dashboard/products";
     }
-
 }

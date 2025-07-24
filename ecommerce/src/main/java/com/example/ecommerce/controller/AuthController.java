@@ -53,10 +53,9 @@ public class AuthController {
         user.setIsActive(true);
 
         userRepository.save(user);
-//        model.addAttribute("registerSuccess", "Registration successful. You can now log in.");
+        model.addAttribute("registerSuccess", "Registration successful. You can now log in.");
         model.addAttribute("user", new User()); // Reset form
         model.addAttribute("registerSuccess", "Registration successful. You can now log in.");
         return "login";
-
     }
 }

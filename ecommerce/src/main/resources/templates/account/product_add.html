@@ -77,6 +77,12 @@
                             <div class="myaccount-details">
                                 <form class="uren-form" th:action="@{/dashboard/products/add}" method="post" th:object="${product}" enctype="multipart/form-data">
                                     <input type="hidden" th:csrf />
+                                    <div th:if="${success}" class="alert alert-success">
+                                        <span th:text="${success}"></span>
+                                    </div>
+                                    <div th:if="${error}" class="alert alert-danger">
+                                        <span th:text="${error}"></span>
+                                    </div>
                                     <div class="uren-form-inner">
                                         <div class="single-input single-input-half">
                                             <label for="name">Name <span class="text-danger">*</span></label>
