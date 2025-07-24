@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>About | Smart Furniture Shop</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/menu/logo/logo.png}">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/font-awesome.css}">
+    <!-- Fontawesome Star -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/fontawesome-stars.css}">
+    <!-- Ion Icon -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/ion-fonts.css}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/slick.css}">
+    <!-- Animation -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/animate.css}">
+    <!-- jQuery Ui -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/jquery-ui.min.css}">
+    <!-- Lightgallery -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/lightgallery.min.css}">
+    <!-- Nice Select -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/nice-select.css}">
+
+    <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
+    <!--
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    -->
+
+    <!-- Main Style CSS (Please use minify version for better website load performance) -->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div layout:fragment="content">
+
+        <!-- Begin Uren's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="@{/}">Home</a></li>
+                        <li class="active">About</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Uren's Breadcrumb Area End Here -->
+        <!-- Begin Uren's About Us Area -->
+        <div class="about-us-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="overview-img text-center img-hover_effect">
+                            <a href="#">
+                                <img class="img-full" th:src="@{/assets/images/about-us/1.jpg}" alt="Smart Furniture Shop">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                        <div class="overview-content">
+                            <h2>Welcome To <span>Smart Furniture</span> Shop!</h2>
+                            <p class="short_desc">We Provide Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Welcome to Crafters of Comfort, where passion meets craftsmanship to create beautiful, lasting furniture that turns houses into homes. We believe in the power of a well-crafted piece to inspire relaxation, evoke warmth, and bring loved ones closer together. Driven by this vision, we've made it our mission to design furniture that seamlessly blends comfort, durability, and timeless style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-us-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                        <div class="overview-content">
+                            <h2>Our  <span>Story</span> Shop!</h2>
+                            <p class="short_desc">
+                                Crafters of Comfort was born from a love for home and a commitment to quality. We began as a small workshop with a handful of skilled artisans dedicated to creating custom, handcrafted furniture. Over time, our passion for craftsmanship and our attention to detail gained recognition, allowing us to expand our team and our offerings. Today, we combine traditional techniques with modern aesthetics, ensuring every piece reflects our commitment to excellence.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="overview-img text-center img-hover_effect">
+                            <a href="#">
+                                <img class="img-full" th:src="@{/assets/images/about-us/1.jpg}" alt="Smart Furniture Shop">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-us-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="overview-img text-center img-hover_effect">
+                            <a href="#">
+                                <img class="img-full" th:src="@{/assets/images/about-us/1.jpg}" alt="Smart Furniture Shop">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                        <div class="overview-content">
+                            <h2>Who We <span>Serve</span></h2>
+                            <p class="short_desc">
+                                We design for those who value comfort without compromising style—families, homeowners, and design enthusiasts who understand that the perfect piece of furniture is both functional and beautiful. Whether you're furnishing a new space or adding a unique touch to a beloved room, we're here to help you create a space that feels like home.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-us-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                        <div class="overview-content">
+                            <h2>How We <span>Operate</span></h2>
+                            <p class="short_desc">
+                                Our process is built around the idea of thoughtful craftsmanship. Each piece is designed in-house and made with ustainable materials sourced from trusted partners. Our team of artisans pours skill and attention into every detail, from the initial sketches to the finishing touches, ensuring that every piece meets our high standards for comfort and durability
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="overview-img text-center img-hover_effect">
+                            <a href="#">
+                                <img class="img-full" th:src="@{/assets/images/about-us/1.jpg}" alt="Smart Furniture Shop">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</div>
+
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<!-- Modernizer JS -->
+<script th:src="@{/assets/js/vendor/modernizr-2.8.3.min.js}"></script>
+<!-- Popper JS -->
+<script th:src="@{/assets/js/vendor/popper.min.js}"></script>
+<!-- Bootstrap JS -->
+<script th:src="@{/assets/js/vendor/bootstrap.min.js}"></script>
+
+<!-- Slick Slider JS -->
+<script th:src="@{/assets/js/plugins/slick.min.js}"></script>
+<!-- Barrating JS -->
+<script th:src="@{/assets/js/plugins/jquery.barrating.min.js}"></script>
+<!-- Counterup JS -->
+<script th:src="@{/assets/js/plugins/jquery.counterup.js}"></script>
+<!-- Nice Select JS -->
+<script th:src="@{/assets/js/plugins/jquery.nice-select.js}"></script>
+<!-- Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/jquery.sticky-sidebar.js}"></script>
+<!-- Jquery-ui JS -->
+<script th:src="@{/assets/js/plugins/jquery-ui.min.js}"></script>
+<script th:src="@{/assets/js/plugins/jquery.ui.touch-punch.min.js}"></script>
+<!-- Lightgallery JS -->
+<script th:src="@{/assets/js/plugins/lightgallery.min.js}"></script>
+<!-- Scroll Top JS -->
+<script th:src="@{/assets/js/plugins/scroll-top.js}"></script>
+<!-- Theia Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/theia-sticky-sidebar.min.js}"></script>
+<!-- Waypoints JS -->
+<script th:src="@{/assets/js/plugins/waypoints.min.js}"></script>
+<!-- jQuery Zoom JS -->
+<script th:src="@{/assets/js/plugins/jquery.zoom.min.js}"></script>
+
+<!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
+<!--
+<script src="assets/js/vendor/vendor.min.js"></script>
+<script src="assets/js/plugins/plugins.min.js"></script>
+-->
+
+<!-- Main JS -->
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>

@@ -58,12 +58,5 @@ public class AuthController {
         model.addAttribute("registerSuccess", "Registration successful. You can now log in.");
         return "login";
 
-
-//        return "login"; // Show same page with success message
-    }
-
-    @GetMapping("/dashboard")
-    public String dashboard() {
-        return "account/dashboard";
     }
 }

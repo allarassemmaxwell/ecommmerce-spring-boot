@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="fragments/base" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cities | Smart Furniture Shop</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/menu/logo/logo.png}">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/font-awesome.css}">
+    <!-- Fontawesome Star -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/fontawesome-stars.css}">
+    <!-- Ion Icon -->
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/ion-fonts.css}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/slick.css}">
+    <!-- Animation -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/animate.css}">
+    <!-- jQuery Ui -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/jquery-ui.min.css}">
+    <!-- Lightgallery -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/lightgallery.min.css}">
+    <!-- Nice Select -->
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/nice-select.css}">
+
+    <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
+    <!--
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    -->
+
+    <!-- Main Style CSS (Please use minify version for better website load performance) -->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div th:replace="fragments/header :: header"></div>
+
+    <div layout:fragment="content">
+
+        <!-- Begin Uren's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <h2>Cities</h2>
+                    <ul>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li class="active">Cities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Uren's Breadcrumb Area End Here -->
+        <!-- Begin Uren's Page Content Area -->
+        <main class="page-content">
+            <!-- Begin Uren's Account Page Area -->
+            <div class="account-page-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div th:replace="fragments/sidebar :: sidebar"></div>
+
+                        <div class="col-lg-9">
+                            <div class="single-input mb-3">
+                                <button class="uren-btn uren-btn_dark"><a class="text-white" th:href="@{/dashboard/cities/add}" >Add City</a></button>
+                            </div>
+                            <div class="tab-content myaccount-tab-content">
+                                <h4 class="small-title">Cities</h4>
+                                <div class="table-responsive">
+                                    <div th:if="${success}" class="alert alert-success">
+                                        <span th:text="${success}"></span>
+                                    </div>
+                                    <div th:if="${error}" class="alert alert-danger">
+                                        <span th:text="${error}"></span>
+                                    </div>
+                                    <table class="table table-bordered table-hover">
+                                        <tbody>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>DATE</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr th:each="city : ${cities}">
+                                            <td><a class="account-order-id" href="javascript:void(0)" th:text="${city.name}">Name</a></td>
+                                            <td th:text="${#temporals.format(city.createdAt, 'MMM dd, yyyy')}">Date</td>
+                                            <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Uren's Account Page Area End Here -->
+        </main>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+<!-- Modernizer JS -->
+<script th:src="@{/assets/js/vendor/modernizr-2.8.3.min.js}"></script>
+<!-- Popper JS -->
+<script th:src="@{/assets/js/vendor/popper.min.js}"></script>
+<!-- Bootstrap JS -->
+<script th:src="@{/assets/js/vendor/bootstrap.min.js}"></script>
+
+<!-- Slick Slider JS -->
+<script th:src="@{/assets/js/plugins/slick.min.js}"></script>
+<!-- Barrating JS -->
+<script th:src="@{/assets/js/plugins/jquery.barrating.min.js}"></script>
+<!-- Counterup JS -->
+<script th:src="@{/assets/js/plugins/jquery.counterup.js}"></script>
+<!-- Nice Select JS -->
+<script th:src="@{/assets/js/plugins/jquery.nice-select.js}"></script>
+<!-- Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/jquery.sticky-sidebar.js}"></script>
+<!-- Jquery-ui JS -->
+<script th:src="@{/assets/js/plugins/jquery-ui.min.js}"></script>
+<script th:src="@{/assets/js/plugins/jquery.ui.touch-punch.min.js}"></script>
+<!-- Lightgallery JS -->
+<script th:src="@{/assets/js/plugins/lightgallery.min.js}"></script>
+<!-- Scroll Top JS -->
+<script th:src="@{/assets/js/plugins/scroll-top.js}"></script>
+<!-- Theia Sticky Sidebar JS -->
+<script th:src="@{/assets/js/plugins/theia-sticky-sidebar.min.js}"></script>
+<!-- Waypoints JS -->
+<script th:src="@{/assets/js/plugins/waypoints.min.js}"></script>
+<!-- jQuery Zoom JS -->
+<script th:src="@{/assets/js/plugins/jquery.zoom.min.js}"></script>
+
+<!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
+<!--
+<script src="assets/js/vendor/vendor.min.js"></script>
+<script src="assets/js/plugins/plugins.min.js"></script>
+-->
+
+<!-- Main JS -->
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>
