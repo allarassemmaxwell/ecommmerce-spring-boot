@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ContactController {
-
     private final ContactRepository contactRepository;
 
-    // Constructor injection of the repository
     public ContactController(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
@@ -43,6 +41,12 @@ public class ContactController {
         model.addAttribute("successMessage", "Thank you for contacting us, We will get back to you as soon as possible.");
         model.addAttribute("contact", new Contact());  // Reset the form
         return "contact";  // Return the contact page
+    }
+
+    @GetMapping("/dashboard/contacts")
+    public String showContactsPage(Model model) {
+        model.addAttribute("contacts", contactRepository.findAll());
+        return "account/contacts";
     }
 }
 

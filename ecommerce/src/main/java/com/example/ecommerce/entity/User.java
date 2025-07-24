@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users") // renamed from "user" to avoid H2 conflict
-@Data // ✅ Generates getters, setters, toString, equals, hashCode
-@NoArgsConstructor // ✅ Default constructor
+@Data
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,10 @@ public class User {
     @NotEmpty(message = "Password is required")
     private String password;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
+    private City city;
+
     private Boolean isAdmin;
     private Boolean isActive;
 
@@ -43,6 +47,7 @@ public class User {
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
+        isActive = true; // Optional: set default
     }
 
     @PreUpdate

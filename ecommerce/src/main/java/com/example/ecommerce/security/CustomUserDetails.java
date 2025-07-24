@@ -1,11 +1,14 @@
 package com.example.ecommerce.security;
+
 import com.example.ecommerce.entity.User;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
 
+@Getter
 public class CustomUserDetails implements UserDetails {
 
     private final User user;
@@ -14,31 +17,34 @@ public class CustomUserDetails implements UserDetails {
         this.user = user;
     }
 
-    // Required by UserDetails
+    // This will allow Thymeleaf to access it via #authentication.principal.isAdmin
+    public boolean getIsAdmin() {
+        return user.getIsAdmin() != null && user.getIsAdmin();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // You can return roles here if needed. For now, return empty list
-        return Collections.emptyList();
+        return Collections.emptyList(); // Customize if roles are needed
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword(); // Already encoded in DB
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getEmail(); // Login using email
+        return user.getEmail();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; // you can customize this
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true; // or user.isActive() if you want to lock inactive users
+        return true;
     }
 
     @Override
@@ -48,11 +54,6 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return Boolean.TRUE.equals(user.getIsActive()); // Check activation
-    }
-
-    public User getUser() {
-        return user;
+        return user.getIsActive() != null && user.getIsActive();
     }
 }
-
