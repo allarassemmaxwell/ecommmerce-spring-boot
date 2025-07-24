@@ -27,7 +27,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/register", "/login", "/about", "/faq", "/products", "/contact", "/h2-console/**", "/assets/**", "/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/", "/register", "/login","/logout", "/about", "/faq", "/products","/products/**", "/contact", "/h2-console/**", "/assets/**", "/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -46,7 +46,7 @@ public class SecurityConfig {
                         .ignoringRequestMatchers("/h2-console/**") // Allow H2 console
                 )
                 .headers(headers -> headers
-                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin) // ✅ non-deprecated
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
                 )
                 .userDetailsService(userDetailsService);
 

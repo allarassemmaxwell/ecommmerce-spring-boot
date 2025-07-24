@@ -76,7 +76,7 @@
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <div class="row mb-3">
+                                        <div class="row mb-3" th:if="${#authentication.authenticated and #authentication.principal.isAdmin}">
                                             <div class="col-md-4">
                                                 <div class="card">
                                                     <div class="card-body">
@@ -89,7 +89,7 @@
                                                 <div class="card">
                                                     <div class="card-body">
                                                         <h5 class="card-title">Orders</h5>
-                                                        <p class="card-text">15</p>
+                                                        <p class="card-text" th:text="${orderCount}">0</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,7 +102,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mb-5">
+                                        <div class="row mb-5" th:if="${#authentication.authenticated and #authentication.principal.isAdmin}">
                                             <div class="col-md-4">
                                                 <div class="card">
                                                     <div class="card-body">
@@ -121,266 +121,64 @@
                                             </div>
                                         </div>
 
-                                        <h4 class="small-title">Orders</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>User</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>Delete</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="account-cities" role="tabpanel" aria-labelledby="account-cities-tab">
-                                    <div class="myaccount-orders">
-                                        <h4 class="small-title">MY ORDERS</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>ORDER</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th>TOTAL</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="account-advertisements" role="tabpanel" aria-labelledby="account-advertisements-tab">
-                                    <div class="myaccount-orders">
-                                        <h4 class="small-title">ADVERTISEMENTS</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>ORDER</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th>TOTAL</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="account-categories" role="tabpanel" aria-labelledby="account-categories-tab">
-                                    <div class="myaccount-orders">
-                                        <h4 class="small-title">CATEGORIES</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>ORDER</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th>TOTAL</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="account-users" role="tabpanel" aria-labelledby="account-users-tab">
-                                    <div class="myaccount-orders">
-                                        <h4 class="small-title">USERS</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>ORDER</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th>TOTAL</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
-                                    <div class="myaccount-orders">
-                                        <h4 class="small-title">MY ORDERS</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                <tr>
-                                                    <th>ORDER</th>
-                                                    <th>DATE</th>
-                                                    <th>STATUS</th>
-                                                    <th>TOTAL</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>On Hold</td>
-                                                    <td>£162.00 for 2 items</td>
-                                                    <td><a href="javascript:void(0)" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
-                                    <div class="myaccount-address">
-                                        <p>The following addresses will be used on the checkout page by default.</p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h4 class="small-title">BILLING ADDRESS</h4>
-                                                <address>
-                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                                                </address>
+                                        <div th:if="${#authentication.authenticated and #authentication.principal.isAdmin}">
+                                            <h4 class="small-title">User Orders</h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>User</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Total</th>
+                                                        <th></th>
+                                                    </tr>
+                                                    <tr th:each="order : ${allOrders}">
+                                                        <td><a class="account-order-id"  th:text="${order.id}">#5364</a></td>
+                                                        <td th:text="${order.user.firstName + ' ' + order.user.lastName}">John Doe</td>
+                                                        <td th:text="${#temporals.format(order.createdAt, 'yyyy-MM-dd HH:mm')}">Date</td>
+                                                        <td th:text="${order.status}">Status</td>
+                                                        <td  th:text="'KES ' + (order.totalAmount != null ? order.totalAmount : 0)">KES0.00</td>
+                                                        <td>
+                                                            <a href="" class="uren-btn uren-btn_dark uren-btn_sm"><span>View</span></a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                            <div class="col">
-                                                <h4 class="small-title">SHIPPING ADDRESS</h4>
-                                                <address>
-                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                                                </address>
+                                        <div>
+
+                                        <div th:if="${#authentication.authenticated and not #authentication.principal.isAdmin}">
+                                            <h4 class="small-title">My Orders</h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Total</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr th:each="order : ${myOrders}">
+                                                        <td th:text="${order.id}">#1234</td>
+                                                        <td th:text="${#temporals.format(order.createdAt, 'yyyy-MM-dd HH:mm')}">2025-07-24</td>
+                                                        <td th:text="${order.status}">PENDING</td>
+                                                        <td th:text="'KES ' + (order.totalAmount != null ? order.totalAmount : 0)">KES 0.00</td>
+                                                        <td>
+                                                            <a href="" class="uren-btn uren-btn_dark uren-btn_sm"><span>Delete</span></a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                    </div>
+                                        </div>
                                 </div>
-                                <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
-                                    <div class="myaccount-details">
-                                        <form action="#" class="uren-form">
-                                            <div class="uren-form-inner">
-                                                <div class="single-input single-input-half">
-                                                    <label for="account-details-firstname">First Name*</label>
-                                                    <input type="text" id="account-details-firstname">
-                                                </div>
-                                                <div class="single-input single-input-half">
-                                                    <label for="account-details-lastname">Last Name*</label>
-                                                    <input type="text" id="account-details-lastname">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-email">Email*</label>
-                                                    <input type="email" id="account-details-email">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-oldpass">Current Password(leave blank to leave
-                                                        unchanged)</label>
-                                                    <input type="password" id="account-details-oldpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-newpass">New Password (leave blank to leave
-                                                        unchanged)</label>
-                                                    <input type="password" id="account-details-newpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-confpass">Confirm New Password</label>
-                                                    <input type="password" id="account-details-confpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <button class="uren-btn uren-btn_dark" type="submit"><span>SAVE
-                                                    CHANGES</span></button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
